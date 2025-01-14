@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Test Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Add the mute/unmute button -->
+<div id="audio-control" class="audio-button">
+    <span id="audio-icon">🔊</span>
+  </div>
+  
+    <!-- Name Entry Section -->
+    <div id="name-entry">
+        <h1>WELCOME TO</h1>
+        <h1>Memory Test Game!</h1>
+        <h5>_______________________________________________</h5>
+        <label for="user-name">Enter your name:</label>
+        <input type="text" id="user-name" placeholder="Enter Your name" required>
+        <div id="age-and-start">
+            <label for="user-age">Your Age:</label>
+            <input type="number" id="user-age" placeholder="Your Age" required>
+            <button onclick="handleNameEntry()">Start</button>
+        </div>
+    </div>
+
+<!-- Level Selection Section -->
+    <div id="level-select" style="display: none;">
+        <h1 id="welcome-message">Hello, User!</h1>
+        <h2>Select a Level</h2>
+        <button onclick="selectLevel('easy')">Easy</button>
+        <button onclick="selectLevel('hard')">Hard</button>
+    </div>
+
+
+    <!-- Image Display Section -->
+    <div id="image-display" style="display: none;">
+        <div class="image-container">
+            <img id="game-image" src="" alt="Memory Test Image">
+            <!-- Timer and Skip Button side by side -->
+            <div class="info-container">
+                <div class="timer" id="image-timer">00:30</div>
+                <button id="skip-button" onclick="skipImageTimer()">Skip</button>
+            </div>
+        </div>
+        <div id="progress-bar"></div>
+    </div>
+
+    <div id="transition-message" style="display:none; text-align:center; font-size:2rem; color:#fff; background-color: rgba(0, 0, 0, 0.7); padding: 20px; border-radius: 10px;">
+        Get ready for the questions
+      </div>
+      
+      
+    <!-- Game Content Section -->
+    <div id="game-content" style="display: none;">
+        <p id="timer">10</p>
+        <p id="question-text"></p>
+        <div id="options-container"></div>
+    </div>
+
+    <!-- Game Result Section -->
+    <div id="game-result" style="display: none;">
+        <h1>Game Over!</h1>
+        <p id="score-display"></p>
+        <button id="view-answers-btn">View Answers</button>
+
+    <!-- Answers container (hidden initially) -->
+    <div id="answers-container" style="display: none;">
+        <ul id="answer-list"></ul>
+    </div>
+
+        <button onclick="restartGame()">Restart</button>
+    </div>
+
+    <!-- Add the ticking sound audio element -->
+    <audio id="tick-sound" src="tick-sound.mp3" preload="auto" loop></audio>
+    <audio id="click-sound" src="click-sound.mp3" preload="auto"></audio>
+    <audio id="bg-music" src="bg-music.mp3" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+
+    <div id="footer-bar">Created by - Shristi , Tushar , Durgesh , Hariom</div>
+</body>
+</html>
